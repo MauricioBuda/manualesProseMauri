@@ -47,7 +47,7 @@ a {
 }
 
 .btn-primary {
-  --bs-btn-bg: rgb(185, 230, 160);
+  --bs-btn-bg: rgb(255, 255, 255);
   --bs-btn-hover-bg: rgb(255, 255, 255, 0.5);
   --bs-btn-hover-border-color: #000000;
 }
@@ -77,8 +77,45 @@ a {
   grid-template-columns: 2fr 2fr 2fr;
   grid-template-rows: 250px 250px 250px;
   grid-template-areas: 
-  "neo" "rsi" "climax"
-  "vista" "585" "caddx"
-  "camaras" "cf" "otros";
+  "neo rsi climax"
+  "vista 585 caddx"
+  "camaras cf otros";
  }
+
+ .neo{
+  grid-area: neo;
+ }
+
+ .rsi{
+  grid-area: rsi;
+ }
+
+ .climax{
+  grid-area: climax;
+ }
+
+ .vista{
+  grid-area: vista;
+ }
+
+ .585{
+  grid-area: 585;
+ }
+
+ .caddx{
+  grid-area: caddx;
+ }
+
+ .camaras{
+  grid-area: camaras;
+ }
+
+ .cf{
+  grid-area: cf;
+ }
+
+ .otros{
+  grid-area: otros;
+ }
+
  /* TERMINA MANUALES */
