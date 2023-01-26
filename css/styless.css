@@ -1,3 +1,4 @@
+/* EMPIEZAN GENERALES */
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +10,6 @@
     height: 100%;
   }
 
-body{
-  background-image: url(../img/fondo_herramientas.jpg);
-}
-  
   img {
     max-width: 100%;
   }
@@ -21,14 +18,13 @@ a {
     text-decoration: none;
     color: black;
 }
+/* EMPIEZAN GENERALES */
 
-.index_h1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5rem 0 0 0;
-  font-size: 10vW;
-  -webkit-text-stroke: 0.1rem white;
+
+
+/* EMPIEZA INDEX */
+.body_index{
+  background-image: url(../img/fondo_herramientas.jpg);
 }
 
 .section_index{
@@ -39,6 +35,15 @@ a {
   width:100vw;
   height:60vh; 
 
+}
+
+.index_h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem 0 0 0;
+  font-size: 10vW;
+  -webkit-text-stroke: 0.1rem white;
 }
 
 .btn-primary {
@@ -63,3 +68,17 @@ a {
 .btn_tecnico a:hover{
   color: black;
  }
+ /* TERMINA INDEX */
+
+
+ /* EMPIEZA MANUALES */
+ .manuales_section{
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-rows: 250px 250px 250px;
+  grid-template-areas: 
+  "neo" "rsi" "climax"
+  "vista" "585" "caddx"
+  "camaras" "cf" "otros";
+ }
+ /* TERMINA MANUALES */
