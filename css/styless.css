@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    height: 100%;
+  }
+
+body{
+  background-image: url(../img/fondo_herramientas.jpg);
+}
+  
+  img {
+    max-width: 100%;
+  }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.index_h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem 0 0 0;
+  font-size: 10vW;
+  -webkit-text-stroke: 0.1rem white;
+}
+
+.section_index{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  width:100vw;
+  height:60vh; 
+
+}
+
+.btn-primary {
+  --bs-btn-bg: rgb(185, 230, 160);
+  --bs-btn-hover-bg: rgb(255, 255, 255, 0.5);
+  --bs-btn-hover-border-color: #000000;
+}
+
+.btn_tecnico{
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_tecnico a{
+ font-size: 4vw;
+
+}
+
+.btn_tecnico a:hover{
+  color: black;
+ }
