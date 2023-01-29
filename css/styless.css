@@ -314,11 +314,58 @@ a {
   margin-top: 10rem;
 }
 
-.section_dsc button{
-  margin: 5rem;
+.section_dsc p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
+  margin: 2rem;
 }
 
-/* .dsc1{
-
-} */
+.section_dsc button{
+  margin: 3rem;
+}
 /* TERMINA 585 */
+
+
+/* EMPIEZA CADDX */
+.section_caddx{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 200px 200px 200px;
+  justify-items: center;
+  align-items: center;
+  font-size: 2vw;
+  margin-top: 10rem;
+  grid-template-areas: 
+  "caddx1 caddx2"
+  "caddx3 caddx_volver";
+ }
+
+ @media screen and (max-width: 728px) {
+  .section_caddx{
+    grid-template-rows: 150px 150px 190px ;
+    row-gap: 1rem;
+  }
+}
+
+.caddx1{
+  grid-area: caddx1;
+}
+
+.caddx2{
+  grid-area: caddx2;
+}
+
+
+.caddx3{
+  grid-area: caddx3;
+}
+
+.caddx_volver{
+  grid-area: caddx_volver;
+  border: solid black;
+}
+
+
+/* TERMINA CADDX */
