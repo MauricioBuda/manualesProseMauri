@@ -116,7 +116,7 @@ a {
   "neo rsi climax"
   "vista dsc caddx"
   "camaras cf otros"
-  ". volver .";
+  "puntos . volver";
  }
 
  @media screen and (max-width: 728px) {
@@ -181,6 +181,11 @@ a {
 
  .cf{
   grid-area: cf;
+ }
+
+ .puntos{
+  grid-area: puntos;
+  border: solid black;
  }
 
  .otros{
