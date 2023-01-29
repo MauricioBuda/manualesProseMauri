@@ -189,6 +189,7 @@ a {
 
  .volver{
   grid-area: volver;
+  border: solid black;
  }
  /* TERMINA MANUALES */
 
@@ -249,6 +250,7 @@ a {
 
 .volver_i{
   grid-area: volver;
+  border: solid black;
 }
 /* TERMINA INSTRUCTIVOS */
 
@@ -296,5 +298,27 @@ a {
 
 .neo_volver{
   grid-area: neo_volver;
+  border: solid black;
 }
 /* TERMINA NEO */
+
+
+/* EMPIEZA 585 */
+.section_dsc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 10rem;
+}
+
+.section_dsc button{
+  margin: 5rem;
+}
+
+/* .dsc1{
+
+} */
+/* TERMINA 585 */
