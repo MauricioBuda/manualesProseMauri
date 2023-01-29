@@ -25,9 +25,15 @@ a {
 /* EMPIEZA INDEX */
 .body_index{
   background-image: url(../img/fondo_herramientas.jpg);
-  resize: both;
+  /* resize: both;
   overflow: auto;
-  background-repeat: round;
+  background-repeat: round; */
+}
+
+@media screen and (max-width: 728px) {
+  .body_index {
+    background-image: url(../img/fondo_herramientas_chico.jpg);
+  }
 }
 
 .section_index{
