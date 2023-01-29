@@ -18,11 +18,7 @@ a {
     text-decoration: none;
     color: black;
 }
-/* EMPIEZAN GENERALES */
 
-
-
-/* EMPIEZA INDEX */
 .body_img{
   background-image: url(../img/fondo_herramientas.jpg);
 }
@@ -32,7 +28,11 @@ a {
     background-image: url(../img/fondo_herramientas2.jpg);
   }
 }
+/* TERMINAN GENERALES */
 
+
+
+/* EMPIEZA INDEX */
 .section_index{
   display: flex;
   justify-content: space-evenly;
@@ -61,6 +61,8 @@ a {
   .index_h1{
     font-size: 12vw;
     margin-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -98,9 +100,8 @@ a {
    
    }
  }
-
-
  /* TERMINA INDEX */
+
 
 
  /* EMPIEZA MANUALES */
@@ -189,6 +190,111 @@ a {
  .volver{
   grid-area: volver;
  }
-
-
  /* TERMINA MANUALES */
+
+
+
+/* EMPIEZA INSTRUCTIVOS */
+.section_inst{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 200px 200px 200px 250px ;
+  justify-items: center;
+  align-items: center;
+  font-size: 20vw;
+  grid-template-areas: 
+  "neo rsi"
+  "climax vista"
+  "ivms1 ivms2"
+  "volver volver";
+}
+
+@media screen and (max-width: 728px) {
+  .section_inst{
+    grid-template-rows: 120px 120px 120px 150px ;
+    /* row-gap: 1rem; */
+  }
+}
+
+@media screen and (max-width: 728px) {
+  .btn_instructivo{
+    width: 25vw;
+    height: 8vh;
+  }
+}
+
+.neo_i{
+  grid-area: neo;
+}
+
+.rsi_i{
+  grid-area: rsi;
+}
+
+.climax_i{
+  grid-area: climax;
+}
+
+.vista_i{
+  grid-area: vista;
+}
+
+.ivms_i{
+  grid-area: ivms1;
+}
+
+.ivms_ii{
+  grid-area: ivms2;
+}
+
+.volver_i{
+  grid-area: volver;
+}
+/* TERMINA INSTRUCTIVOS */
+
+
+/* EMPIEZA NEO */
+.section_neo{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 200px 200px 200px;
+  justify-items: center;
+  align-items: center;
+  font-size: 2vw;
+  grid-template-areas: 
+  "neo1 neo2"
+  "neo3 neo4"
+  "neo5 neo_volver";
+ }
+
+ @media screen and (max-width: 728px) {
+  .section_neo{
+    grid-template-rows: 150px 150px 150px 190px ;
+    row-gap: 1rem;
+  }
+}
+
+.neo1{
+  grid-area: neo1;
+}
+
+.neo2{
+  grid-area: neo2;
+}
+
+.neo3{
+  grid-area: neo3;
+}
+
+.neo4{
+  grid-area: neo4;
+}
+
+.neo5{
+  grid-area: neo5;
+}
+
+.neo_volver{
+  grid-area: neo_volver;
+}
+/* TERMINA NEO */
