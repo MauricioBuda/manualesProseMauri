@@ -371,6 +371,48 @@ a {
   grid-area: caddx_volver;
   border: solid black;
 }
-
-
 /* TERMINA CADDX */
+
+
+/* EMPIEZA PUNTOS */
+.section_puntos{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 200px 200px 200px;
+  justify-items: center;
+  align-items: center;
+  font-size: 2vw;
+  grid-template-areas: 
+  "puntos1 puntos2"
+  "puntos3 puntos4"
+  "puntos_volver puntos_volver";
+ }
+
+ @media screen and (max-width: 728px) {
+  .section_puntos{
+    grid-template-rows: 150px 150px 150px 190px ;
+    row-gap: 1rem;
+  }
+}
+
+.puntos1{
+  grid-area: puntos1;
+}
+
+.puntos2{
+  grid-area: puntos2;
+}
+
+.puntos3{
+  grid-area: puntos3;
+}
+
+.puntos4{
+  grid-area: puntos4;
+}
+
+.puntos_volver{
+  grid-area: puntos_volver;
+  border: solid black;
+}
+/* TERMINA PUNTOS */
