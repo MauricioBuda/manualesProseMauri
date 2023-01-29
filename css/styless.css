@@ -25,6 +25,9 @@ a {
 /* EMPIEZA INDEX */
 .body_index{
   background-image: url(../img/fondo_herramientas.jpg);
+  resize: both;
+  overflow: auto;
+  background-repeat: round;
 }
 
 .section_index{
@@ -76,46 +79,114 @@ a {
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
   grid-template-rows: 250px 250px 250px;
+  justify-items: center;
+  align-items: center;
+  font-size: 2vw;
   grid-template-areas: 
   "neo rsi climax"
-  "vista 585 caddx"
+  "vista dsc caddx"
   "camaras cf otros";
  }
 
  .neo{
   grid-area: neo;
+  border: solid black;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    height: 7vh;
+  width: 15vw;
  }
 
  .rsi{
   grid-area: rsi;
+  border: solid black;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    height: 7vh;
+  width: 15vw;
  }
 
  .climax{
   grid-area: climax;
+  border: solid black;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+    height: 7vh;
+  width: 15vw;
  }
 
  .vista{
   grid-area: vista;
+  border: solid black;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    height: 7vh;
+  width: 15vw;
  }
 
- .585{
-  grid-area: 585;
+ .dsc{
+  grid-area: dsc;
+  border: solid black;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    height: 7vh;
+  width: 15vw;
  }
 
  .caddx{
   grid-area: caddx;
+  border: solid black;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    height: 7vh;
+  width: 15vw;
  }
 
  .camaras{
   grid-area: camaras;
+  border: solid black;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7vh;
+  width: 15vw;
  }
 
  .cf{
   grid-area: cf;
+  border: solid black;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    height: 7vh;
+  width: 15vw;
  }
 
  .otros{
   grid-area: otros;
+  border: solid black;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    height: 7vh;
+  width: 15vw;
  }
+
 
  /* TERMINA MANUALES */
