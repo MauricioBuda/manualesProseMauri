@@ -378,7 +378,7 @@ footer div p {
   flex-direction: column;
   max-width: 100%;
   max-height: 100%;
-  margin-top: 10rem;
+  margin: 1rem;
 }
 
 .section_dsc p{
