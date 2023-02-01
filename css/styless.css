@@ -406,12 +406,13 @@ footer div p {
   grid-template-areas: 
   "camaras1 camaras2"
   "camaras3 camaras4"
-  "camaras5  camaras_volver";
+  "camaras5  camaras6"
+  "camaras_volver camaras_volver";
  }
 
  @media screen and (max-width: 728px) {
   .section_camaras{
-    grid-template-rows: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px 150px;
     row-gap: 1rem;
   }
 }
@@ -434,6 +435,10 @@ footer div p {
 
 .camaras5{
   grid-area: camaras5;
+}
+
+.camaras6{
+  grid-area: camaras6;
 }
 
 .camaras_volver{
