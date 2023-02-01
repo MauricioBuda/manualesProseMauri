@@ -185,7 +185,7 @@ a {
 
  .puntos{
   grid-area: puntos;
-  border: solid black;
+  border: solid 4px black;
  }
 
  .otros{
@@ -198,7 +198,7 @@ a {
 
  .volver{
   grid-area: volver;
-  border: solid black;
+  border: solid 4px black;
  }
  /* TERMINA MANUALES */
 
@@ -259,7 +259,7 @@ a {
 
 .volver_i{
   grid-area: volver;
-  border: solid black;
+  border: solid 4px black;
 }
 /* TERMINA INSTRUCTIVOS */
 
@@ -312,7 +312,7 @@ a {
 
 .neo_volver{
   grid-area: neo_volver;
-  border: solid black;
+  border: solid 4px black;
 }
 /* TERMINA NEO */
 
@@ -341,6 +341,52 @@ a {
 }
 /* TERMINA 585 */
 
+
+/* EMPIEZA CAMARAS */
+.section_camaras{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 200px 200px 200px 250px;
+  justify-items: center;
+  align-items: center;
+  font-size: 2vw;
+  grid-template-areas: 
+  "camaras1 camaras2"
+  "camaras3 camaras4"
+  "camaras5  camaras_volver";
+ }
+
+ @media screen and (max-width: 728px) {
+  .section_camaras{
+    grid-template-rows: 150px 150px 150px;
+    row-gap: 1rem;
+  }
+}
+
+.camaras1{
+  grid-area: camaras1;
+}
+
+.camaras2{
+  grid-area: camaras2;
+}
+
+.camaras3{
+  grid-area: camaras3;
+}
+
+.camaras4{
+  grid-area: camaras4;
+}
+
+.camaras5{
+  grid-area: camaras5;
+}
+
+.camaras_volver{
+  grid-area: camaras_volver;
+  border: solid 4px black;
+}
 
 /* EMPIEZA CADDX */
 .section_caddx{
@@ -378,7 +424,7 @@ a {
 
 .caddx_volver{
   grid-area: caddx_volver;
-  border: solid black;
+  border: solid 4px black;
 }
 /* TERMINA CADDX */
 
@@ -422,7 +468,7 @@ a {
 
 .puntos_volver{
   grid-area: puntos_volver;
-  border: solid black;
+  border: solid 4px black;
 }
 /* TERMINA PUNTOS */
 
@@ -479,7 +525,7 @@ a {
 
 .otros_volver{
   grid-area: otros_volver;
-  border: solid black;
+  border: solid 4px black;
 }
 /* TERMINA OTROS */
 
@@ -495,7 +541,7 @@ a {
   margin-top: 15rem;
   grid-template-areas: 
   "vista1 vista2"
-  "vista_volver vista_volver";
+  "vista3 vista_volver";
  }
 
  @media screen and (max-width: 728px) {
@@ -513,8 +559,12 @@ a {
   grid-area: vista2;
 }
 
+.vista3{
+  grid-area: vista3;
+}
+
 .vista_volver{
   grid-area: vista_volver;
-  border: solid black;
+  border: solid 4px black;
 }
 /* TERMINA VISTA */
