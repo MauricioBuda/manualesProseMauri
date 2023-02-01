@@ -116,7 +116,7 @@ a {
   "neo rsi climax"
   "vista dsc caddx"
   "camaras cf otros"
-  "puntos . volver";
+  "puntos pizarro volver";
  }
 
  @media screen and (max-width: 728px) {
@@ -190,6 +190,10 @@ a {
 
  .otros{
   grid-area: otros;
+ }
+
+ .pizarro{
+  grid-area: pizarro;
  }
 
  .volver{
@@ -416,3 +420,96 @@ a {
   border: solid black;
 }
 /* TERMINA PUNTOS */
+
+
+/* EMPIEZA OTROS */
+.section_otros{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 200px 200px 200px 250px;
+  justify-items: center;
+  align-items: center;
+  font-size: 2vw;
+  grid-template-areas: 
+  "otros1 otros2"
+  "otros3 otros4"
+  "otros5 otros6"
+  "otros7 otros_volver";
+ }
+
+ @media screen and (max-width: 728px) {
+  .section_otros{
+    grid-template-rows: 150px 150px 150px 190px ;
+    row-gap: 1rem;
+  }
+}
+
+.otros1{
+  grid-area: otros1;
+}
+
+.otros2{
+  grid-area: otros2;
+}
+
+.otros3{
+  grid-area: otros3;
+}
+
+.otros4{
+  grid-area: otros4;
+}
+
+.otros5{
+  grid-area: otros5;
+}
+
+.otros6{
+  grid-area: otros6;
+}
+
+.otros7{
+  grid-area: otros7;
+}
+
+.otros_volver{
+  grid-area: otros_volver;
+  border: solid black;
+}
+/* TERMINA OTROS */
+
+
+/* EMPIEZA VISTA */
+.section_vista{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 200px 200px 250px;
+  justify-items: center;
+  align-items: center;
+  font-size: 2vw;
+  margin-top: 15rem;
+  grid-template-areas: 
+  "vista1 vista2"
+  "vista_volver vista_volver";
+ }
+
+ @media screen and (max-width: 728px) {
+  .section_vista{
+    grid-template-rows: 150px 150px 190px ;
+    row-gap: 1rem;
+  }
+}
+
+.vista1{
+  grid-area: vista1;
+}
+
+.vista2{
+  grid-area: vista2;
+}
+
+.vista_volver{
+  grid-area: vista_volver;
+  border: solid black;
+}
+/* TERMINA VISTA */
