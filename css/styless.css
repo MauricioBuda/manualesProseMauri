@@ -275,7 +275,8 @@ a {
   grid-template-areas: 
   "neo1 neo2"
   "neo3 neo4"
-  "neo5 neo_volver";
+  "neo5 neo6"
+  "neo_volver neo_volver";
  }
 
  @media screen and (max-width: 728px) {
@@ -303,6 +304,10 @@ a {
 
 .neo5{
   grid-area: neo5;
+}
+
+.neo6{
+  grid-area: neo6;
 }
 
 .neo_volver{
