@@ -258,7 +258,7 @@ footer div p {
 
 @media screen and (max-width: 728px) {
   .section_inst{
-    grid-template-rows: 120px 120px 120px 150px ;
+    grid-template-rows: 110px 110px 110px 140px ;
     /* row-gap: 1rem; */
   }
 }
