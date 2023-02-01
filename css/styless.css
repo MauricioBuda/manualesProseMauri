@@ -30,7 +30,7 @@ footer {
   justify-content: center;
   margin-top: auto;
   align-items: center;
-    max-width: 100%;
+  max-width: 100%;
 }
 
 footer div{
@@ -50,8 +50,8 @@ footer div p {
 }
 
 @media screen and (max-width: 728px) {
-  footer p {
-  font-size: 2.5vw ;
+  footer div p {
+  font-size: 2.6vw ;
   }
 }
 
