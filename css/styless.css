@@ -683,11 +683,16 @@ footer div p {
 }
 
 .producto {
-    max-width: 20%;
-    padding: 10px;
-    margin: 10px;
-    margin-bottom: 20px;
-    box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
+  width: 25%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  margin: 10px;
+  margin-bottom: 20px;
+  box-shadow: 2px 6px 3px 3px rgb(0 0 0 / 30%);
 }
 
 .precioProducto {
