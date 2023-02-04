@@ -657,6 +657,7 @@ select{
 .h3, h3 {
   font-size: 2.4rem !important;
   text-align: center;
+  color: #000000;
 }
 
 .calcular_header {
@@ -799,6 +800,8 @@ select{
     padding: 20px;
     transition: all .5s;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-active .modal-carrito {
@@ -806,7 +809,7 @@ select{
 }
 
 .modal-carrito h3 {
-    color: royalblue;
+    color:black;
     padding-bottom: 5px;
 }
 .modal-carrito #carritoCerrar {
@@ -814,7 +817,7 @@ select{
     top: 15px;
     right: 15px;
     font-size: 20px;
-    color: royalblue;
+    color:black;
     border: none;
     background-color: white;
 }
