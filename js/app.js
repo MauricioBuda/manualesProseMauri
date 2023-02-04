@@ -70,12 +70,14 @@ const agregarAlCarrito = (prodId) => {
             // map encuentre cual es el q igual al que está agregado, le suma la cantidad
             if (prod.id === prodId){
                 prod.cantidad++
+                cartelitoToast()
             }
         })
     } else { //EN CASO DE QUE NO ESTÉ, AGREGAMOS EL CURSO AL CARRITO
         const item = stockProductos.find((prod) => prod.id === prodId)//Trabajamos con las ID
         //Una vez obtenida la ID, lo que haremos es hacerle un push para agregarlo al carrito
         carrito.push(item)
+        cartelitoToast()
     }
     //Va a buscar el item, agregarlo al carrito y llama a la funcion actualizarCarrito, que recorre
     //el carrito y se ve.
@@ -214,3 +216,14 @@ switch (respuestaFiltro) {
 }
 
 opciones.addEventListener("change",filtrarDivs)
+
+
+function cartelitoToast () {
+    Toastify({
+        text: "Agregado",
+        duration: 2000,
+        gravity: "top",
+        position: "left",
+
+    }).showToast()
+}
