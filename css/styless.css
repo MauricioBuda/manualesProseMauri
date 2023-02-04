@@ -664,7 +664,7 @@ select{
     margin-bottom: 20px;
 }
 .titulo {
-    color: royalblue;
+    color: rgb(30, 43, 40);
     text-transform: uppercase;
     font-weight: 700;
     font-size: 4rem;
@@ -726,7 +726,7 @@ select{
 
 @media screen and (max-width: 728px) {
   .producto-act, .producto{
-    width: 40%;
+    width: 44%;
   }
 
   .calcular_header {
@@ -778,8 +778,11 @@ select{
     position: relative;
     background-color: white;
     width: 95%;
+    height: auto;
+    max-height: 80%;
     padding: 20px;
     transition: all .5s;
+    overflow: auto;
 }
 
 .modal-active .modal-carrito {
