@@ -1,4 +1,5 @@
 let stockProductos = [
+    {id: 0, nombre: "HFDE", tipo: "HFDE", cantidad: 1, desc: "Hora fuera de estandar", valor: 1},
     {id: 1, nombre: "Instalación", tipo: "ACTIVIDAD", cantidad: 1, desc: "Instalación", valor: 0.45},
     {id: 3, nombre: "Reparación", tipo: "ACTIVIDAD", cantidad: 1, desc: "Reparación", valor: 1.25},
     {id: 2, nombre: "Conexión a red", tipo: "ACTIVIDAD", cantidad: 1, desc: "Conexión a red", valor: 1},

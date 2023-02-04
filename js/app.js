@@ -28,6 +28,9 @@ stockProductos.forEach((producto) => {
     const div = document.createElement('div')
     if (producto.tipo === "ACTIVIDAD") {
         div.classList.add('producto-act')
+    }
+    else if (producto.tipo === "HFDE"){
+        div.classList.add('producto-hfde')
     } else {
     div.classList.add('producto')
     }
@@ -38,7 +41,6 @@ stockProductos.forEach((producto) => {
     <button id="agregar${producto.id}" class="boton-agregar"> Agregar <i class="fas fa-wrench"></i></button>
     ` 
     contenedorProductos.appendChild(div)
-
 
     //2 - SEGUNDO PASO, LUEGO DE QUE INSERTEMOS EL HTML EN EL DOM:
     const boton = document.getElementById(`agregar${producto.id}`)
@@ -124,13 +126,91 @@ const actualizarCarrito = () => {
     contadorCarrito.innerText = carrito.length // actualizamos con la longitud del carrito.
     //OCTAVO PASO
     console.log(carrito)
-    precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.valor, 0)
+    precioTotal.innerText =  (carrito.reduce((acc, prod) => acc + prod.cantidad * prod.valor, 0)).toFixed(2)
     //Por cada producto q recorro en mi carrito, al acumulador le suma la propiedad precio, con el acumulador
     //empezando en 0.
 
 }
 
+let opciones = document.getElementById("filtroTipo")
+let vaciarContenedorProductos = document.getElementById("contenedor-productos")
+
 
 const filtrarDivs = () => {
-    let
+    while (vaciarContenedorProductos.firstChild) {
+        vaciarContenedorProductos.removeChild(vaciarContenedorProductos.firstChild);
+    }
+
+    let respuestaFiltro = document.getElementById("filtroTipo").value;
+    const divsFiltrados =  stockProductos.filter((element)=>element.tipo === respuestaFiltro);
+
+switch (respuestaFiltro) {
+    case "TODO":
+        stockProductos.forEach((producto) => {
+            const div = document.createElement('div')
+            if (producto.tipo === "ACTIVIDAD") {
+                div.classList.add('producto-act')
+            }
+            else if (producto.tipo === "HFDE"){
+                div.classList.add('producto-hfde')
+            } else {
+            div.classList.add('producto')
+            }
+            div.innerHTML = `
+            <h3>${producto.nombre}</h3>
+            <p>${producto.desc}</p>
+            <p class="precioProducto">Valor: ${producto.valor}</p>
+            <button id="agregar${producto.id}" class="boton-agregar"> Agregar <i class="fas fa-wrench"></i></button>
+            ` 
+            contenedorProductos.appendChild(div)
+        
+            //2 - SEGUNDO PASO, LUEGO DE QUE INSERTEMOS EL HTML EN EL DOM:
+            const boton = document.getElementById(`agregar${producto.id}`)
+            //Por cada elemento de mi array, creo un div, lo cuelgo, le pongo un id particular, una vez colgado
+            //le hago un get element by id (el de agregar) Obtengo el elemento y a dicho elemento le agregamos
+            //el add event listener
+        
+            boton.addEventListener('click', () => {
+                //esta funcion ejecuta el agregar el carrito con la id del producto
+                agregarAlCarrito(producto.id)
+                //
+            })
+        })
+        break;
+    case respuestaFiltro:
+        divsFiltrados.forEach((producto) => {
+            const div = document.createElement('div')
+            if (producto.tipo === "ACTIVIDAD") {
+                div.classList.add('producto-act')
+            }
+            else if (producto.tipo === "HFDE"){
+                div.classList.add('producto-hfde')
+            } else {
+            div.classList.add('producto')
+            }
+            div.innerHTML = `
+            <h3>${producto.nombre}</h3>
+            <p>${producto.desc}</p>
+            <p class="precioProducto">Valor: ${producto.valor}</p>
+            <button id="agregar${producto.id}" class="boton-agregar"> Agregar <i class="fas fa-wrench"></i></button>
+            ` 
+            contenedorProductos.appendChild(div)
+        
+            //2 - SEGUNDO PASO, LUEGO DE QUE INSERTEMOS EL HTML EN EL DOM:
+            const boton = document.getElementById(`agregar${producto.id}`)
+            //Por cada elemento de mi array, creo un div, lo cuelgo, le pongo un id particular, una vez colgado
+            //le hago un get element by id (el de agregar) Obtengo el elemento y a dicho elemento le agregamos
+            //el add event listener
+        
+            boton.addEventListener('click', () => {
+                //esta funcion ejecuta el agregar el carrito con la id del producto
+                agregarAlCarrito(producto.id)
+                //
+            })
+        })
+        break;
 }
+
+}
+
+opciones.addEventListener("change",filtrarDivs)

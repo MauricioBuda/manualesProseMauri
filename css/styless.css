@@ -33,6 +33,10 @@ footer {
   max-width: 100%;
 }
 
+p{
+  text-align: center;
+}
+
 footer div{
   display: flex;
   justify-content: center;
@@ -691,43 +695,55 @@ select{
     max-width: 1200px;
     margin: 60px auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .producto {
   font-size: 1.2rem;
-  width: 25%;
+  width: 30vw;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 10px;
   align-items: center;
-  margin: 10px;
-  margin-bottom: 20px;
+  margin: 3rem;
   box-shadow: 2px 6px 3px 3px rgb(0 0 0 / 30%);
 }
 
 .producto-act {
   font-size: 1.2rem;
-  width: 25%;
+  width: 30vw;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 10px;
   align-items: center;
-  margin: 10px;
-  margin-bottom: 20px;
+  margin: 3rem;
   box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
   background-color: rgb(212, 211, 211);
 }
 
+.producto-hfde {
+  font-size: 1.2rem;
+  width: 30vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  margin: 3rem;
+  box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.5);
+  background-color: rgb(156, 154, 154);
+}
+
 @media screen and (max-width: 728px) {
-  .producto-act, .producto{
+  /* .producto-act, .producto, .producto-hfde{
     width: 44%;
-  }
+  } */
 
   .calcular_header {
     padding: 20px 2%;
