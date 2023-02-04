@@ -741,9 +741,9 @@ select{
 }
 
 @media screen and (max-width: 728px) {
-  /* .producto-act, .producto, .producto-hfde{
-    width: 44%;
-  } */
+  .producto-act, .producto, .producto-hfde{
+    width: 60%;
+  }
 
   .calcular_header {
     padding: 20px 2%;
