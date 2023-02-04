@@ -642,6 +642,19 @@ footer div p {
 
 /* EMPIEZA CALCULAR PUNTOS */
 
+select{
+  display: flex;
+  width: 80%;
+  margin:auto;
+  font-size: 2rem;
+  background-color: rgb(64, 80, 125, 0.1); ;
+}
+
+.h3, h3 {
+  font-size: 2.4rem !important;
+  text-align: center;
+}
+
 .calcular_header {
     display: flex;
     justify-content: space-between;
@@ -654,11 +667,11 @@ footer div p {
     color: royalblue;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 4rem;
 }
 #boton-carrito {
     border: none;
-    color: royalblue;
+    color: rgb(64, 80, 125);
     font-size: 40px;
     background-color: white;
     border-radius: 50%;
@@ -668,7 +681,7 @@ footer div p {
 #boton-carrito:hover {
     cursor: pointer;
     color: white;
-    background-color: royalblue;
+    background-color: rgb(67, 77, 114);
 }
 #boton-carrito:focus {
     outline: none;
@@ -683,6 +696,7 @@ footer div p {
 }
 
 .producto {
+  font-size: 1.2rem;
   width: 25%;
   height: auto;
   display: flex;
@@ -695,13 +709,39 @@ footer div p {
   box-shadow: 2px 6px 3px 3px rgb(0 0 0 / 30%);
 }
 
+.producto-act {
+  font-size: 1.2rem;
+  width: 25%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  margin: 10px;
+  margin-bottom: 20px;
+  box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
+  background-color: rgb(212, 211, 211);
+}
+
+@media screen and (max-width: 728px) {
+  .producto-act, .producto{
+    width: 40%;
+  }
+
+  .calcular_header {
+    padding: 20px 2%;
+}
+}
+
 .precioProducto {
   line-height: 1.8;
-    font-weight: 700;
+  font-weight: 700;
+  font-size: 2rem;
 }
 
 .boton-agregar {
-    background-color: royalblue;
+    background-color: rgb(108, 112, 124);
     color: white;
     font-size: 18px;
     font-weight: 700;
@@ -737,9 +777,8 @@ footer div p {
 .modal-carrito {
     position: relative;
     background-color: white;
-    min-width: 500px;
+    width: 95%;
     padding: 20px;
-    margin-top: -100%;
     transition: all .5s;
 }
 
@@ -771,6 +810,11 @@ footer div p {
     
 }
 
+#preciotoTotal{
+font-size: 2rem;
+}
+
+
 .productoEnCarrito {
     border-left: 5px solid lightblue;
     border-bottom-left-radius: 3px;
@@ -796,5 +840,9 @@ footer div p {
 }
 .boton-eliminar:focus {
     outline: none;
+}
+
+#contadorCarrito{
+  padding: 1rem;
 }
 /* TERMINA CALCULAR PUNTOS */

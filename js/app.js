@@ -1,15 +1,8 @@
 
 const contenedorProductos = document.getElementById('contenedor-productos')
-
-//TERCER PASO
-
 const contenedorCarrito = document.getElementById('carrito-contenedor')
-//SEXTO PASO
 const botonVaciar = document.getElementById('vaciar-carrito')
-//SEXTIMO PASO, MODIFICAR LOS CONTADORES
 const contadorCarrito = document.getElementById('contadorCarrito')
-
-//OCTAVO PASO
 const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
@@ -25,20 +18,27 @@ document.addEventListener('DOMContentLoaded', () => {
 //SEXTO PASO
 botonVaciar.addEventListener('click', () => {
     carrito.length = 0
+    localStorage.clear()
+    // contenedorModal.setAttribute("style", "display:none;");
     actualizarCarrito()
 })
 
 //PRIMER PRIMER PASO, INYECTAR EL HTML
 stockProductos.forEach((producto) => {
     const div = document.createElement('div')
+    if (producto.tipo === "ACTIVIDAD") {
+        div.classList.add('producto-act')
+    } else {
     div.classList.add('producto')
+    }
     div.innerHTML = `
     <h3>${producto.nombre}</h3>
     <p>${producto.desc}</p>
     <p class="precioProducto">Valor: ${producto.valor}</p>
-    <button id="agregar${producto.id}" class="boton-agregar">Agregar <i class="fas fa-wrench"></i></button>
-    `
+    <button id="agregar${producto.id}" class="boton-agregar"> Agregar <i class="fas fa-wrench"></i></button>
+    ` 
     contenedorProductos.appendChild(div)
+
 
     //2 - SEGUNDO PASO, LUEGO DE QUE INSERTEMOS EL HTML EN EL DOM:
     const boton = document.getElementById(`agregar${producto.id}`)
@@ -52,6 +52,8 @@ stockProductos.forEach((producto) => {
         //
     })
 })
+
+
 
 // 1- PRIMER PASO
 
@@ -126,4 +128,9 @@ const actualizarCarrito = () => {
     //Por cada producto q recorro en mi carrito, al acumulador le suma la propiedad precio, con el acumulador
     //empezando en 0.
 
+}
+
+
+const filtrarDivs = () => {
+    let
 }
