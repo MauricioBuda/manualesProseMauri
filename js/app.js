@@ -73,6 +73,7 @@ const agregarAlCarrito = (prodId) => {
                 cartelitoToast()
             }
         })
+        
     } else { //EN CASO DE QUE NO ESTÉ, AGREGAMOS EL CURSO AL CARRITO
         const item = stockProductos.find((prod) => prod.id === prodId)//Trabajamos con las ID
         //Una vez obtenida la ID, lo que haremos es hacerle un push para agregarlo al carrito
@@ -224,6 +225,12 @@ function cartelitoToast () {
         duration: 2000,
         gravity: "top",
         position: "left",
-
+        style:{
+            fontSize:"5vw",
+            background: "rgb(67, 77, 114,0.9)",
+            color:"white",
+            width:"30%",
+            heigth:"auto"
+        }
     }).showToast()
 }
