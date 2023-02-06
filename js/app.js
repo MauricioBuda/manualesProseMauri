@@ -114,8 +114,9 @@ const eliminarDelCarrito = (prodId) => {                        //Recibo el ID q
     const item = carrito.find((prod) => prod.id === prodId)                     //Guardo en 'item' el objeto que quiere borrar
     const indice = carrito.indexOf(item)                        //Con idexOf consigo la posicion del objeto
     contadorElementos = contadorElementos - item.cantidad;                      //Resto del contador general, la cantidad de elementos eliminados
+    item.cantidad = 1                       //Reinicio el contador del elemento en particular, el que se muestra en la ventana modal
     carrito.splice(indice, 1)                       //Con splice me paro en el indice, y borro ese objeto (y si habian varios iguales, se van tambien)
-    // un elemento 
+
     actualizarCarrito()                     //Cada vez que hay alguna modificacion, ejecutamos esta funcion que actualiza los datos en pantalla
 }
 
