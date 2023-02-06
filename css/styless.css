@@ -766,10 +766,12 @@ select{
     border: none;
 }
 .boton-agregar:hover {
-    cursor: pointer;
+  background-color: rgb(56, 58, 63);
+  cursor: pointer;
 }
 .boton-agregar:focus {
     outline: none;
+    border: solid rgb(62, 62, 62) 3px;
 }
 
 .modal-contenedor {

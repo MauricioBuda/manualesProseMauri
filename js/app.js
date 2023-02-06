@@ -1,4 +1,4 @@
-
+// Declaro nodos
 const contenedorProductos = document.getElementById('contenedor-productos')
 const contenedorCarrito = document.getElementById('carrito-contenedor')
 const botonVaciar = document.getElementById('vaciar-carrito')
@@ -7,26 +7,43 @@ const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
 
-let carrito = []
 
+//Declaro el "carrito" y el contador de los elementos agregados
+let carrito = []
+let contadorElementos = 0
+
+
+//Cuando carga la pagina, levanto del Storage el carrito y el contador de elementos
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('carrito')){
         carrito = JSON.parse(localStorage.getItem('carrito'))
-        actualizarCarrito()
+        contadorElementos = Number(localStorage.getItem('contadorElementos'))
+        actualizarCarrito()                     //Cada vez que hay alguna modificacion, ejecutamos esta funcion que actualiza los datos en pantalla
     }
 })
-//SEXTO PASO
+
+
+// Al apretar el boton para vaciar, me reinicia contador y carrito
 botonVaciar.addEventListener('click', () => {
+
+    
+    contadorElementos = 0                       //Pongo en cero el contador general de elementos
+
+    carrito.forEach((elem)=>{                   //Recorro el carrito y reinicio la cantidad de cada elemento (para la ventana modal)           
+        elem.cantidad = 1 ;
+    })
     carrito.length = 0
+    window.location.reload               //Recargo la pagina, porque sino no se reinicia la cantidad de elementos
+
     localStorage.clear()
-    // contenedorModal.setAttribute("style", "display:none;");
-    actualizarCarrito()
+    actualizarCarrito()                  //Cada vez que hay alguna modificacion, ejecutamos esta funcion que actualiza los datos en pantalla
 })
 
-//PRIMER PRIMER PASO, INYECTAR EL HTML
+
+//Genero los divs levantando el stock mediante un forEach, y les asigno sus clases
 stockProductos.forEach((producto) => {
     const div = document.createElement('div')
-    if (producto.tipo === "ACTIVIDAD") {
+    if (producto.tipo === "ACTIVIDAD") {                //Con este if else, le doy clases distintas a los divs segun su tipo
         div.classList.add('producto-act')
     }
     else if (producto.tipo === "HFDE"){
@@ -34,79 +51,79 @@ stockProductos.forEach((producto) => {
     } else {
     div.classList.add('producto')
     }
-    div.innerHTML = `
+
+
+    //A cada div le asigno sus h3 y sus p. Cada uno con sus clases e ID
+    div.innerHTML = `               
     <h3>${producto.nombre}</h3>
     <p>${producto.desc}</p>
     <p class="precioProducto">Valor: ${producto.valor}</p>
-    <button id="agregar${producto.id}" class="boton-agregar"> Agregar <i class="fas fa-wrench"></i></button>
-    ` 
-    contenedorProductos.appendChild(div)
+    <button id="agregar${producto.id}" class="boton-agregar"> Agregar <i class="fas fa-wrench"></i></button>` 
 
-    //2 - SEGUNDO PASO, LUEGO DE QUE INSERTEMOS EL HTML EN EL DOM:
+
+//Le aviso al contenedor que generamos los divs (hijos)
+    contenedorProductos.appendChild(div)                         
+
+
+    //Le acabo de asignar un ID a cada btn de agregar, y ahora genero un solo nodo para despues
+    // asignarle la misma funcion a todos esos btn
     const boton = document.getElementById(`agregar${producto.id}`)
-    //Por cada elemento de mi array, creo un div, lo cuelgo, le pongo un id particular, una vez colgado
-    //le hago un get element by id (el de agregar) Obtengo el elemento y a dicho elemento le agregamos
-    //el add event listener
 
+
+    //Y ahora agarro ese nodo, y a cada btn de agregar, le digo que ejecute la funcion de agregar al carrito,
+    // pero cada uno con su ID correspondiente, usando el paramentro 'producto.id'
     boton.addEventListener('click', () => {
-        //esta funcion ejecuta el agregar el carrito con la id del producto
         agregarAlCarrito(producto.id)
-        //
     })
 })
 
 
+//Funcion para agragar al carrito
+const agregarAlCarrito = (prodId) => {              //Recibo como parametro el ID del elemento segun el click que hicieron
 
-// 1- PRIMER PASO
+    //Genero 'existe' para ver si ya figura el elemento en la lista
+    const existe = carrito.some (prod => prod.id === prodId) //Con 'some' me da TRUE si ya existe, lo corroboro con el ID del click
 
-//AGREGAR AL CARRITO
-const agregarAlCarrito = (prodId) => {
 
-    //PARA AUMENTAR LA CANTIDAD Y QUE NO SE REPITA
-    const existe = carrito.some (prod => prod.id === prodId) //comprobar si el elemento ya existe en el carro
-
-    if (existe){ //SI YA ESTÁ EN EL CARRITO, ACTUALIZAMOS LA CANTIDAD
-        const prod = carrito.map (prod => { //creamos un nuevo arreglo e iteramos sobre cada curso y cuando
-            // map encuentre cual es el q igual al que está agregado, le suma la cantidad
+    //Con este IF, usando MAP, hago que si el producto figura, lo pushee pero no lo agregue nuevamente a la ventana modal, sino
+    //que simplemente aumente su cantidad
+    if (existe){ 
+        const prod = carrito.map (prod => { 
             if (prod.id === prodId){
-                prod.cantidad++
-                cartelitoToast()
+                prod.cantidad++                         //Incremento el contador especifico de ese elemento
+                contadorElementos++                     //Incremento el contador de la totalidad de elementos
+                CartelitoToastAgregado()                //Usando la libreria Tostify, cada vez que agregan algo pone un cartelito
             }
         })
-        
-    } else { //EN CASO DE QUE NO ESTÉ, AGREGAMOS EL CURSO AL CARRITO
-        const item = stockProductos.find((prod) => prod.id === prodId)//Trabajamos con las ID
-        //Una vez obtenida la ID, lo que haremos es hacerle un push para agregarlo al carrito
+    
+    
+    //Si no encuentra el producto, lo pushea, pero tambien lo agrega a la ventana modal
+    } else {                
+        const item = stockProductos.find((prod) => prod.id === prodId)
         carrito.push(item)
-        cartelitoToast()
+        contadorElementos++                     //Incremento el contador de la totalidad de elementos
+        CartelitoToastAgregado()                //Usando la libreria Tostify, cada vez que agregan algo pone un cartelito
     }
-    //Va a buscar el item, agregarlo al carrito y llama a la funcion actualizarCarrito, que recorre
-    //el carrito y se ve.
-    actualizarCarrito() //LLAMAMOS A LA FUNCION QUE CREAMOS EN EL TERCER PASO. CADA VEZ Q SE 
-    //MODIFICA EL CARRITO
+
+    actualizarCarrito()                     //Cada vez que hay alguna modificacion, ejecutamos esta funcion que actualiza los datos en pantalla
 }
-//agregarAlCarrito(1) //Le pasamos el ID por parametro. Tenemos que asigarle como evento esta funcion al boton
-//con el id de su producto correspondiente
 
-// 5 - QUINTO PASO
-const eliminarDelCarrito = (prodId) => {
-    const item = carrito.find((prod) => prod.id === prodId)
 
-    const indice = carrito.indexOf(item) //Busca el elemento q yo le pase y nos devuelve su indice.
-
-    carrito.splice(indice, 1) //Le pasamos el indice de mi elemento ITEM y borramos 
+//Funcion para eliminar un producto del carrito
+const eliminarDelCarrito = (prodId) => {                        //Recibo el ID que me da el usuario con el click
+    const item = carrito.find((prod) => prod.id === prodId)                     //Guardo en 'item' el objeto que quiere borrar
+    const indice = carrito.indexOf(item)                        //Con idexOf consigo la posicion del objeto
+    contadorElementos = contadorElementos - item.cantidad;                      //Resto del contador general, la cantidad de elementos eliminados
+    carrito.splice(indice, 1)                       //Con splice me paro en el indice, y borro ese objeto (y si habian varios iguales, se van tambien)
     // un elemento 
-    actualizarCarrito() //LLAMAMOS A LA FUNCION QUE CREAMOS EN EL TERCER PASO. CADA VEZ Q SE 
-    //MODIFICA EL CARRITO
-    console.log(carrito)
+    actualizarCarrito()                     //Cada vez que hay alguna modificacion, ejecutamos esta funcion que actualiza los datos en pantalla
 }
 
+
+//Funcion para actualizar todo, cada vez que se modifica algo
 const actualizarCarrito = () => {
-    //4- CUARTO PASO
-    //LOS APPENDS SE VAN ACUMULANDO CON LO QE HABIA ANTES
-    contenedorCarrito.innerHTML = "" //Cada vez que yo llame a actualizarCarrito, lo primero q hago
-    //es borrar el nodo. Y despues recorro el array lo actualizo de nuevo y lo rellena con la info
-    //actualizado
+
+    contenedorCarrito.innerHTML = ""                        //Elimino todo lo que se estaba viendo por pantalla
     //3 - TERCER PASO. AGREGAR AL MODAL. Recorremos sobre el array de carrito.
 
     //Por cada producto creamos un div con esta estructura y le hacemos un append al contenedorCarrito (el modal)
@@ -122,13 +139,13 @@ const actualizarCarrito = () => {
 
         contenedorCarrito.appendChild(div)
         
+        localStorage.setItem('contadorElementos', Number(contadorElementos))
         localStorage.setItem('carrito', JSON.stringify(carrito))
 
     })
     //SEPTIMO PASO
-    contadorCarrito.innerText = carrito.length // actualizamos con la longitud del carrito.
+    contadorCarrito.innerText = Number(contadorElementos) // actualizamos con la longitud del carrito.
     //OCTAVO PASO
-    console.log(carrito)
     precioTotal.innerText =  (carrito.reduce((acc, prod) => acc + prod.cantidad * prod.valor, 0)).toFixed(2)
     //Por cada producto q recorro en mi carrito, al acumulador le suma la propiedad precio, con el acumulador
     //empezando en 0.
@@ -219,10 +236,26 @@ switch (respuestaFiltro) {
 opciones.addEventListener("change",filtrarDivs)
 
 
-function cartelitoToast () {
+function CartelitoToastAgregado () {
     Toastify({
         text: "Agregado",
         duration: 2000,
+        gravity: "top",
+        position: "left",
+        style:{
+            fontSize:"5vw",
+            background: "rgb(67, 77, 114,0.9)",
+            color:"white",
+            width:"30%",
+            heigth:"auto"
+        }
+    }).showToast()
+}
+
+function CartelitoToastCarritoVaciado () {
+    Toastify({
+        text: "Eliminaste todo",
+        duration: 3000,
         gravity: "top",
         position: "left",
         style:{
