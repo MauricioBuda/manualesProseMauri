@@ -403,7 +403,7 @@ footer div p {
 .section_camaras{
   display: grid;
   grid-template-columns: 2fr 2fr;
-  grid-template-rows: 200px 200px 200px 250px;
+  grid-template-rows: 200px 200px 200px 200px 200px;
   justify-items: center;
   align-items: center;
   font-size: 2vw;
@@ -411,13 +411,13 @@ footer div p {
   "camaras1 camaras2"
   "camaras3 camaras4"
   "camaras5  camaras6"
-  "camaras7 camaras_volver";
+  "camaras7 camaras8"
+  "camaras_volver camaras_volver";
  }
 
  @media screen and (max-width: 728px) {
   .section_camaras{
-    grid-template-rows: 150px 150px 150px 150px;
-    row-gap: 1rem;
+    grid-template-rows: 130px 130px 130px 130px 130px;
   }
 }
 
@@ -449,6 +449,10 @@ footer div p {
   grid-area: camaras7;
 }
 
+.camaras8{
+  grid-area: camaras8;
+}
+
 .camaras_volver{
   grid-area: camaras_volver;
   border: solid 4px black;
@@ -467,7 +471,7 @@ footer div p {
   margin-top: 10rem;
   grid-template-areas: 
   "climax1 climax2"
-  "climax_volver climax_volver";
+  "climax3 climax_volver";
  }
 
  @media screen and (max-width: 728px) {
@@ -485,12 +489,51 @@ footer div p {
   grid-area: climax2;
 }
 
+.climax3{
+  grid-area: climax3;
+}
+
 .climax_volver{
   grid-area: climax_volver;
   border: solid 4px black;
 }
 /* TERMINA CLIMAX */
 
+
+/* EMPIEZA CLIMAX INST */
+.section_climax_inst{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 200px 200px;
+  justify-items: center;
+  align-items: center;
+  font-size: 2vw;
+  margin-top: 10rem;
+  grid-template-areas: 
+  "climax_inst1 climax_inst2"
+  "climax_inst_volver climax_inst_volver";
+ }
+
+ @media screen and (max-width: 728px) {
+  .section_climax_inst{
+    grid-template-rows: 150px 190px ;
+    row-gap: 1rem;
+  }
+}
+
+.climax_inst1{
+  grid-area: climax_inst1;
+}
+
+.climax_inst2{
+  grid-area: climax_inst2;
+}
+
+.climax_inst_volver{
+  grid-area: climax_inst_volver;
+  border: solid 4px black;
+}
+/* TERMINA CLIMAX INST */
 
 /* EMPIEZA CADDX */
 .section_caddx{
