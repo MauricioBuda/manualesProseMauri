@@ -97,6 +97,14 @@ footer div p {
   font-size: 8vW;
   -webkit-text-stroke: 0.1rem white;
 }
+.inst_h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem !important;
+  font-size: 8vW;
+  -webkit-text-stroke: 0.1rem white;
+}
 
 @media screen and (max-width: 728px) {
   .index_h1{
@@ -336,7 +344,6 @@ footer div p {
  @media screen and (max-width: 728px) {
   .section_neo{
     grid-template-rows: 150px 150px 150px 190px ;
-    row-gap: 1rem;
   }
 }
 
