@@ -37,8 +37,8 @@ botonVaciar.addEventListener('click', () => {
         elem.cantidad = 1 ;
     })
     carrito.length = 0
-    window.location.reload               //Recargo la pagina, porque sino no se reinicia la cantidad de elementos
-
+    //window.location.reload()             //Recargo la pagina, porque sino no se reinicia la cantidad de elementos
+    CartelitoToastCarritoVaciado ()             // Cartelito de que vaciaste el carrito
     localStorage.clear()
     actualizarCarrito()                  //Cada vez que hay alguna modificacion, ejecutamos esta funcion que actualiza los datos en pantalla
 })
@@ -279,15 +279,18 @@ function CartelitoToastAgregado () {
 function CartelitoToastCarritoVaciado () {
     Toastify({
         text: "Eliminaste todo",
-        duration: 3000,
+        duration: 2000,
         gravity: "top",
         position: "left",
         style:{
+            display: "flex",
+            textAlign: "center",
             fontSize:"5vw",
-            background: "rgb(67, 77, 114,0.9)",
+            background: "rgb(255, 0, 0, 0.8)",
             color:"white",
-            width:"25%",
+            width:"auto",
             heigth:"auto"
         }
     }).showToast()
 }
+
