@@ -883,7 +883,7 @@ select{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all .5s;
+    /* transition: all .5s; */
     opacity: 0;
     visibility: hidden;
 }
@@ -900,7 +900,7 @@ select{
     height: auto;
     max-height: 80%;
     padding: 20px;
-    transition: all .5s;
+    /* transition: all .5s; */
     overflow: auto;
     display: flex;
     flex-direction: column;
