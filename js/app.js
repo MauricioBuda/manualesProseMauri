@@ -276,6 +276,8 @@ function CartelitoToastAgregado () {
     }).showToast()
 }
 
+
+//Funcion de la libreria Tostify para mostrar el cartelito cada vez que se vacia el "carrito"
 function CartelitoToastCarritoVaciado () {
     Toastify({
         text: "Eliminaste todo",
