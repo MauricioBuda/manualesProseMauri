@@ -594,7 +594,8 @@ footer div p {
   grid-template-areas: 
   "puntos1 puntos2"
   "puntos3 puntos4"
-  "puntos5 puntos_volver";
+  "puntos5 puntos6"
+  "puntos_volver puntos_volver";
  }
 
  @media screen and (max-width: 728px) {
@@ -604,7 +605,7 @@ footer div p {
     grid-template-areas: 
   "puntos1 puntos2"
   "puntos3 puntos4"
-  "puntos5 puntos5"
+  "puntos5 puntos6"
   "puntos_volver puntos_volver";
   }
 }
@@ -627,9 +628,14 @@ footer div p {
 
 .puntos5{
   grid-area: puntos5;
+  font-weight: 600;
   border: solid 4px black;
-  /* background-color: rgba(157, 149, 206, 0.5); */
+  background-color: rgba(157, 149, 206, 0.9);
   ;
+}
+
+.puntos6{
+  grid-area: puntos6;
 }
 
 .puntos_volver{
@@ -762,7 +768,7 @@ select{
 
 .calcular_header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 20px 10%;
     box-shadow: 0px 5px 4px 3px rgba(0, 0, 0, 0.3);
@@ -775,13 +781,17 @@ select{
     font-size: 4rem;
 }
 #boton-carrito {
-    border: none;
     color: rgb(64, 80, 125);
     font-size: 40px;
     background-color: white;
     border-radius: 50%;
     padding: 10px 20px;
     transition: all .3s;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
 }
 #boton-carrito:hover {
     cursor: pointer;

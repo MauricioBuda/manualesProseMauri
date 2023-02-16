@@ -9,7 +9,7 @@ let stockProductos = [
     {id: 7, nombre: "Reubicación", tipo: "ACTIVIDAD", cantidad: 1, desc: "Reubicación", valor: 1.3},
     {id: 9, nombre: "Continuación", tipo: "ACTIVIDAD", cantidad: 1, desc: "Continuación", valor: 0.45},
     {id: 8, nombre: "Ampliación", tipo: "ACTIVIDAD", cantidad: 1, desc: "Continuación", valor: 0.45},
-    {id: 10, nombre: "Bidireccional", tipo: "ACTIVIDAD", cantidad: 1, desc: "Continuación", valor: 0.7},
+    {id: 10, nombre: "Bidireccional", tipo: "ACTIVIDAD", cantidad: 1, desc: "Bidireccional", valor: 0.7},
     {id: 11, nombre: "Central comun", tipo: "CENTRAL", cantidad: 1, desc: "Neo, Vista, 585, Caddx", valor: 1},
     {id: 12, nombre: "Central climax", tipo: "CENTRAL", cantidad: 1, desc: "Central climax", valor: 0.49},
     {id: 13, nombre: "Central RSI", tipo: "CENTRAL", cantidad: 1, desc: "Central rsi", valor: 0.6},
