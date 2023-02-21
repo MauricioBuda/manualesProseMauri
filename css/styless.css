@@ -97,12 +97,13 @@ footer div p {
   font-size: 8vW;
   -webkit-text-stroke: 0.1rem white;
 }
+
 .inst_h1{
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 2rem !important;
-  font-size: 8vW;
+  font-size: 5vw;
   -webkit-text-stroke: 0.1rem white;
 }
 
@@ -157,10 +158,9 @@ footer div p {
  .manuales_section{
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
-  grid-template-rows: 200px 200px 200px 250px ;
+  grid-template-rows: 150px 150px 150px 150px ;
   justify-items: center;
   align-items: center;
-  font-size: 2vw;
   grid-template-areas: 
   "neo rsi climax"
   "vista dsc caddx"
@@ -168,37 +168,37 @@ footer div p {
   "puntos pizarro volver";
  }
 
- @media screen and (max-width: 728px) {
-  .manuales_section{
-    grid-template-rows: 150px 150px 150px 190px ;
-    row-gap: 1rem;
-  }
-}
-
-.btn_manuales{
-  width: auto;
-  height: auto;
+ .btn_manuales{
+  width: 18vw;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@media screen and (max-width: 728px) {
-  .btn_manuales{
-    width: 30vw;
-    height: 9vh;
-  }
+ .btn_manuales a{
+  font-size: 2vw;
 }
 
-.btn_manuales a{
-  font-size: 4vw;
- 
- }
- 
- .btn_manuales a:hover{
-   color: black;
+.btn_manuales a:hover{
+  color: black;
   }
 
+ @media screen and (max-width: 728px) {
+  .manuales_section{
+    grid-template-rows: 150px 150px 150px 190px ;
+    row-gap: 1rem;
+  }
+
+  .btn_manuales a{
+    font-size: 4vw;
+  }
+
+  .btn_manuales{
+  width: 30vw;
+  height: 9vh;
+  }
+}
 
  .neo{
   grid-area: neo;
@@ -234,7 +234,7 @@ footer div p {
 
  .puntos{
   grid-area: puntos;
-  border: solid 4px black;
+  border: solid 4px black !important;
  }
 
  .otros{
@@ -256,39 +256,54 @@ footer div p {
 /* EMPIEZA INSTRUCTIVOS */
 .section_inst{
   display: grid;
-  grid-template-columns: 2fr 2fr;
-  grid-template-rows: 200px 200px 200px 250px ;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-rows: 150px 150px 200px;
   justify-items: center;
   align-items: center;
-  font-size: 2vw;
   grid-template-areas: 
-  "neo rsi"
-  "climax vista"
-  "ivms1 ivms2"
-  "volver volver";
+  "neo rsi climax"
+  "vista ivms1 ivms2"
+  "volver volver volver";
 }
 
-@media screen and (max-width: 728px) {
-  .section_inst{
-    grid-template-rows: 110px 110px 110px 140px ;
-    /* row-gap: 1rem; */
-  }
-}
 
 .btn_instructivo{
-  width: auto;
-  height: auto;
+  height: 6vw;
+  width: 22vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .btn_instructivo a{
-  font-size: 4vw;
+  font-size: 2vw;
 }
 
 
 @media screen and (max-width: 728px) {
+  .inst_h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem !important;
+    font-size: 10vw;
+    -webkit-text-stroke: 0.08rem white;
+  }
+
+  .section_inst{
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 110px 110px 110px 140px;
+    grid-template-areas: 
+    "neo rsi"
+    "climax vista"
+    "ivms1 ivms2"
+    "volver volver";
+    }
+
+    .btn_instructivo a{
+      font-size: 4vw;
+    }
+
   .btn_instructivo{
     width: 30vw;
     height: 9vh;
@@ -330,7 +345,7 @@ footer div p {
 .section_neo{
   display: grid;
   grid-template-columns: 2fr 2fr;
-  grid-template-rows: 200px 200px 200px;
+  grid-template-rows: 160px 160px 160px 160px;
   justify-items: center;
   align-items: center;
   font-size: 2vw;
@@ -367,13 +382,14 @@ footer div p {
   grid-area: neo5;
 }
 
+.neo6{
+  grid-area: neo6;
+}
+
 .neo7{
   grid-area: neo7;
 }
 
-.neo6{
-  grid-area: neo6;
-}
 .neo_volver{
   grid-area: neo_volver;
   border: solid 4px black;
@@ -587,7 +603,7 @@ footer div p {
 .section_puntos{
   display: grid;
   grid-template-columns: 2fr 2fr;
-  grid-template-rows: 200px 200px 200px;
+  grid-template-rows: 160px 160px 160px 160px;
   justify-items: center;
   align-items: center;
   font-size: 2vw;
@@ -601,7 +617,6 @@ footer div p {
  @media screen and (max-width: 728px) {
   .section_puntos{
     grid-template-rows: 150px 150px 150px 190px ;
-    row-gap: 1rem;
     grid-template-areas: 
   "puntos1 puntos2"
   "puntos3 puntos4"
@@ -649,7 +664,7 @@ footer div p {
 .section_otros{
   display: grid;
   grid-template-columns: 2fr 2fr;
-  grid-template-rows: 200px 200px 200px 200px 200px;
+  grid-template-rows: 140px 140px 140px 140px 140px;
   justify-items: center;
   align-items: center;
   font-size: 2vw;
