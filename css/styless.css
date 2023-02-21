@@ -170,7 +170,7 @@ footer div p {
 
  .btn_manuales{
   width: 18vw;
-  height: 10vh;
+  height: 12vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -765,7 +765,7 @@ footer div p {
 /* TERMINA VISTA */
 
 
-/* EMPIEZA CALCULAR PUNTOS */
+/* EMPIEZA CALCULAR PUNTOS JS */
 
 select{
   display: flex;
