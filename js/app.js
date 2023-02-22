@@ -295,3 +295,22 @@ function CartelitoToastCarritoVaciado () {
         }
     }).showToast()
 }
+
+function CartelitoToastMontaje () {
+    Toastify({
+        text: "Pasaste los 15 puntos, ganaste ",
+        duration: 2000,
+        gravity: "top",
+        position: "left",
+        style:{
+            display: "flex",
+            textAlign: "center",
+            fontSize:"5vw",
+            background: "rgb(255, 0, 0, 0.8)",
+            color:"white",
+            width:"auto",
+            heigth:"auto"
+        }
+    }).showToast()
+}
+
