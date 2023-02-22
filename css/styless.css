@@ -123,6 +123,7 @@ footer div p {
 }
 
 .btn_tecnico{
+  min-width: 30vw;
   width: auto;
   height: auto;
   display: flex;
@@ -165,7 +166,7 @@ footer div p {
   "neo rsi climax"
   "vista dsc caddx"
   "camaras cf otros"
-  "puntos pizarro volver";
+  "pizarro . volver";
  }
 
  .btn_manuales{
@@ -232,10 +233,10 @@ footer div p {
   grid-area: cf;
  }
 
- .puntos{
+ /* .puntos{
   grid-area: puntos;
   border: solid 4px black !important;
- }
+ } */
 
  .otros{
   grid-area: otros;
@@ -898,6 +899,7 @@ select{
     font-weight: 700;
     padding: 5px;
     border: none;
+    margin-bottom:1rem ;
 }
 .boton-agregar:hover {
   background-color: rgb(56, 58, 63);
@@ -930,14 +932,19 @@ select{
 .modal-carrito {
     position: relative;
     background-color: white;
-    width: 95%;
+    width: 65%;
     height: auto;
     max-height: 80%;
     padding: 20px;
-    /* transition: all .5s; */
     overflow: auto;
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width: 728px) {
+  .modal-carrito {
+    width: 95%;
+  }
 }
 
 .modal-active .modal-carrito {
@@ -1004,3 +1011,4 @@ font-size: 2rem;
   padding: 1rem;
 }
 /* TERMINA CALCULAR PUNTOS */
+
