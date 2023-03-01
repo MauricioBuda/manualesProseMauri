@@ -436,7 +436,7 @@ footer div p {
   "camaras3 camaras4"
   "camaras5  camaras6"
   "camaras7 camaras8"
-  "camaras_volver camaras_volver";
+  "camaras9 camaras_volver";
  }
 
  @media screen and (max-width: 728px) {
@@ -475,6 +475,10 @@ footer div p {
 
 .camaras8{
   grid-area: camaras8;
+}
+
+.camaras9{
+  grid-area: camaras9;
 }
 
 .camaras_volver{
@@ -664,17 +668,16 @@ footer div p {
 /* EMPIEZA OTROS */
 .section_otros{
   display: grid;
-  grid-template-columns: 2fr 2fr;
-  grid-template-rows: 140px 140px 140px 140px 140px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 140px 140px 140px 140px;
   justify-items: center;
   align-items: center;
   font-size: 2vw;
   grid-template-areas: 
-  "otros1 otros2"
-  "otros3 otros4"
-  "otros5 otros6"
-  "otros7 otros8"
-  "otros9 otros_volver";
+  "otros1 otros2 otros3"
+  "otros4 otros5 otros6"
+  "otros7 otros8 otros9"
+  "otros10 . otros_volver";
  }
 
  @media screen and (max-width: 728px) {
@@ -717,6 +720,10 @@ footer div p {
 
 .otros9{
   grid-area: otros9;
+}
+
+.otros10{
+  grid-area: otros10;
 }
 
 .otros_volver{
